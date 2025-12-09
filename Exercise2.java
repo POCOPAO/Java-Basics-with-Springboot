@@ -8,10 +8,10 @@ public class Exercise2 {
 		Truck truck = new Truck(6, "Volvo");
       // call their methods
 		startEngine(car);
-		refuelEngine(car);
+		car.refuel();
 		
 		startEngine(truck);
-		refuelEngine(truck);
+		truck.refuel();
 		
 		destroyVehicle(car);
 		destroyVehicle(truck);
@@ -23,11 +23,6 @@ public class Exercise2 {
 		
 	}
 	
-	private static void refuelEngine(Vehicle vehicle) {
-		
-		vehicle.refuel();
-		
-	}
 	
 	public static void destroyVehicle(Vehicle vehicle) {
 		vehicle.destroy();

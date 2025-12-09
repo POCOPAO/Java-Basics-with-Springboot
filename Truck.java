@@ -5,7 +5,8 @@ package com.java.oop4;
 */
 public class Truck extends Vehicle implements Refuelable{
 	public Truck(int numberOfWheels, String brand) {
-		super(numberOfWheels, brand);
+		this.setNumberOfWheels(numberOfWheels);
+		this.setBrand(brand);
 	}
 
 	public void start() {

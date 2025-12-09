@@ -21,7 +21,6 @@ public abstract class Vehicle {
 	}
 	
 	abstract void start();
-	abstract void refuel();
 	
 	public int getNumberOfWheels() {
 		return numberOfWheels;
