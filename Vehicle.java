@@ -20,7 +20,7 @@ public abstract class Vehicle {
 		this.brand = brand;
 	}
 	
-	abstract void start();
+	abstract void startEngine();
 	
 	public int getNumberOfWheels() {
 		return numberOfWheels;

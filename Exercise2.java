@@ -7,20 +7,18 @@ public class Exercise2 {
 		Car car = new Car(4, "Toyota");
 		Truck truck = new Truck(6, "Volvo");
       // call their methods
-		startEngine(car);
+		start(car);
 		car.refuel();
 		
-		startEngine(truck);
+		start(truck);
 		truck.refuel();
 		
 		destroyVehicle(car);
 		destroyVehicle(truck);
 	}
 	
-	private static void startEngine(Vehicle vehicle) {
-		
-		vehicle.start();
-		
+	public static void start(Vehicle vehicle) {
+		vehicle.startEngine();
 	}
 	
 	

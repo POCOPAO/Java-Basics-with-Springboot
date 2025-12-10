@@ -8,7 +8,7 @@ public class Car extends Vehicle implements Refuelable{
 		this.setBrand(brand);
 	}
 	
-	public void start() {
+	public void startEngine() {
 		String message = "This " + this.getNumberOfWheels() + "-wheeled vehicle's engine has been started! It's a " + this.getBrand() + " Car";
 		System.out.println(message);
 		
