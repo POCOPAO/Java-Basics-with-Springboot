@@ -7,9 +7,15 @@
 		</encoder>
 	</appender>
 
-	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>src/logs/app.log</file>
+
+	<appender name="DAILY_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/bank-app.log</file>
 		<append>true</append>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		<fileNamePattern>logs/bank-app-%d{yyyy-MM-dd}.log</fileNamePattern>
+		<maxHistory>30</maxHistory>
+		<totalSizeCap>1GB</totalSizeCap>
+		</rollingPolicy>
 		<encoder>
 			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] %logger - %msg%n</pattern>	
 		</encoder>
@@ -17,7 +23,7 @@
 
 	<root level="INFO">
 		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="FILE" />
+		<appender-ref ref="DAILY_FILE" />
 	</root>
 
 </configuration>

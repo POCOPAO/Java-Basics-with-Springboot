@@ -1,6 +1,6 @@
 package com.java.logging;
 
-public class M4_Activity6 {
+public class M4_Activity8 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
