@@ -1,7 +1,0 @@
-2026-01-28 09:01:30 INFO    com.bpi.training.jdbc_maven.App - File logging initialized → app.log
-2026-01-28 09:01:30 INFO    com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
-2026-01-28 09:01:31 INFO    com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
-2026-01-28 09:01:52 INFO    com.bpi.training.jdbc_maven.App - File logging initialized → app.log
-2026-01-28 09:01:52 INFO    com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
-2026-01-28 09:01:52 INFO    com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
-2026-01-28 09:02:13 INFO    com.bpi.training.jdbc_maven.App - Inserted student: paopao@email.com
