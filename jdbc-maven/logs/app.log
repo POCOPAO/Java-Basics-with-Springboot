@@ -1,0 +1,53 @@
+2026-01-28 09:34:22.743 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:34:22.745 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:34:23.058 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 09:35:01.463 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:35:01.465 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:35:01.851 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 09:40:26.919 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:40:26.920 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:40:27.285 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 09:40:38.627 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:40:38.628 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:40:38.959 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 09:41:34.948 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:41:34.949 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:41:35.338 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 09:45:52.817 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:45:52.819 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:45:53.174 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 09:46:07.129 [INFO] com.bpi.training.jdbc_maven.App - Inserted student email=elis@par.com
+2026-01-28 09:49:13.471 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 09:49:13.473 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 09:49:13.885 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:03:18.828 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:03:18.829 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:03:19.212 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:05:20.273 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:05:20.276 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:05:20.599 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:06:04.046 [INFO] com.bpi.training.jdbc_maven.App - Inserted course for studentId=1
+2026-01-28 10:13:16.941 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:13:16.943 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:13:17.324 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:14:04.396 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:14:04.397 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:14:04.792 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:14:16.202 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:14:16.202 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:14:16.595 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:14:31.312 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:14:31.314 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:14:31.692 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:15:40.316 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:15:40.317 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:15:40.711 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:15:49.722 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:15:49.723 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:15:50.123 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:16:17.367 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:16:17.368 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:16:17.786 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
+2026-01-28 10:21:47.211 [INFO] com.bpi.training.jdbc_maven.DBConnection - PostgreSQL JDBC driver loaded.
+2026-01-28 10:21:47.215 [INFO] com.bpi.training.jdbc_maven.DBConnection - JUL-to-SLF4J bridge installed.
+2026-01-28 10:21:47.705 [INFO] com.bpi.training.jdbc_maven.App - Schema ensured (students, courses).
