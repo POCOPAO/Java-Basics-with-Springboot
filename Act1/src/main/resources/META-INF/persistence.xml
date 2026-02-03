@@ -8,6 +8,7 @@
 	<persistence-unit name="default"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+         <class>com.bpi.training.M6.Act1.Entity.Student</class>
 
 		<properties>
 			<!-- JDBC connection -->
