@@ -2,7 +2,6 @@ package com.bpi.training.M6.Act1;
 
 import com.bpi.training.M6.Act1.Entity.Student;
 
-import com.bpi.training.M6.Act1.Entity.Course;
 import jakarta.persistence.EntityManager;
 
 
@@ -16,7 +15,7 @@ public class App {
 	    	EntityManager em = EntityManagerUtil.getInstance().createEntityManager();
 	    	
 	    	try {
-	    		persistOneToMany(em);
+	    		M6Activity4Soulution(em);
 
 	    		
 	    		
@@ -26,22 +25,39 @@ public class App {
 	    	}
 	  }
 	   
-	   static void persistOneToMany(EntityManager em) {
+	   static void M6Activity4Soulution(EntityManager em) {
 			
 			
 				em.getTransaction().begin();
 
-				Student student1 = em.find(Student.class, 1L);
+				Student newStudent = new Student();
+				newStudent.setName("Baby Santos");
+				newStudent.setAge(20);
+				newStudent.setEmail("baby@email.com");
 				
+				em.persist(newStudent);
 				
-				Course newCourse = new Course();
-				newCourse.setCourseName("Math");
-				newCourse.setGrade("90");
-				newCourse.setStudent(student1);
+				em.flush();
 				
+				em.detach(newStudent);
 				
+				System.out.println("is newStudent inside persistence context: " + em.contains(newStudent));
 				
-				em.persist(newCourse);
+				Student managedAgain = em.merge(newStudent);
+				
+				managedAgain.setAge(21);
+				managedAgain.setEmail("baby.update@email.com");
+				
+				em.flush();
+				
+				System.out.println("is newStudent inside persistence context: " + em.contains(managedAgain));
+				
+				em.remove(managedAgain);
+				
+				em.flush();
+				
+				System.out.println("is newStudent inside persistence context: " + em.contains(managedAgain));
+				
 				em.getTransaction().commit();
 			
 
