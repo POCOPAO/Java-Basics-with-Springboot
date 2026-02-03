@@ -1,5 +1,7 @@
 package com.bpi.training.M6.Act1;
 
+import java.util.List;
+
 import com.bpi.training.M6.Act1.Entity.Student;
 
 import jakarta.persistence.EntityManager;
@@ -15,7 +17,7 @@ public class App {
 	    	EntityManager em = EntityManagerUtil.getInstance().createEntityManager();
 	    	
 	    	try {
-	    		M6Activity4Soulution(em);
+	    		M6Activity5Soulution(em);
 
 	    		
 	    		
@@ -25,42 +27,21 @@ public class App {
 	    	}
 	  }
 	   
-	   static void M6Activity4Soulution(EntityManager em) {
+	   static void M6Activity5Soulution(EntityManager em) {
 			
 			
-				em.getTransaction().begin();
-
-				Student newStudent = new Student();
-				newStudent.setName("Baby Santos");
-				newStudent.setAge(20);
-				newStudent.setEmail("baby@email.com");
+				List<String> names = JPQLOperations.findStudentNames(em);
+				System.out.println("Student Name:");
+				names.forEach(System.out::println);
 				
-				em.persist(newStudent);
+				Long courseCount = JPQLOperations.countCoursesByStudentId(em, 1L);
+				System.out.println("\nCourses for student id = 1 : " + courseCount);
 				
-				em.flush();
-				
-				em.detach(newStudent);
-				
-				System.out.println("is newStudent inside persistence context: " + em.contains(newStudent));
-				
-				Student managedAgain = em.merge(newStudent);
-				
-				managedAgain.setAge(21);
-				managedAgain.setEmail("baby.update@email.com");
-				
-				em.flush();
-				
-				System.out.println("is newStudent inside persistence context: " + em.contains(managedAgain));
-				
-				em.remove(managedAgain);
-				
-				em.flush();
-				
-				System.out.println("is newStudent inside persistence context: " + em.contains(managedAgain));
-				
-				em.getTransaction().commit();
-			
-
-		}
+				List<Student> olderStudents = JPQLOperations.findStudentsByAgeGreaterThan(em, 18);
+				System.out.println("\nStudents older than 18:");
+				for (Student s : olderStudents) {
+					System.out.println(s.getId() + " - " + s.getName() + " - " + s.getAge()  );
+				}
+		 }
 
 }
