@@ -10,6 +10,7 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
          <class>com.bpi.training.M6.Act1.Entity.Student</class>
 
+         <class>com.bpi.training.M6.Act1.Entity.Course</class>
 		<properties>
 			<!-- JDBC connection -->
 			<property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
@@ -19,8 +20,9 @@
 
 			<!-- Hibernate dialect -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>

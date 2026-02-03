@@ -1,7 +1,10 @@
 package com.bpi.training.M6.Act1;
 
 import com.bpi.training.M6.Act1.Entity.Student;
+
+import com.bpi.training.M6.Act1.Entity.Course;
 import jakarta.persistence.EntityManager;
+
 
 public class App {
 	
@@ -13,7 +16,7 @@ public class App {
 	    	EntityManager em = EntityManagerUtil.getInstance().createEntityManager();
 	    	
 	    	try {
-	    		runM6Activity2(em);
+	    		persistOneToMany(em);
 
 	    		
 	    		
@@ -23,17 +26,22 @@ public class App {
 	    	}
 	  }
 	   
-	   static void runM6Activity2(EntityManager em) {
+	   static void persistOneToMany(EntityManager em) {
 			
 			
 				em.getTransaction().begin();
 
-				Student newStudent = new Student();
-				newStudent.setName("Pedro Dela Rosa");
-				newStudent.setAge(50);
-				newStudent.setEmail("pedrodelarosa@gmail.com");
-
-				em.persist(newStudent);
+				Student student1 = em.find(Student.class, 1L);
+				
+				
+				Course newCourse = new Course();
+				newCourse.setCourseName("Math");
+				newCourse.setGrade("90");
+				newCourse.setStudent(student1);
+				
+				
+				
+				em.persist(newCourse);
 				em.getTransaction().commit();
 			
 
