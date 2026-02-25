@@ -1,0 +1,71 @@
+1. 
+curl --request GET \
+  --url http://localhost:4568/profiles
+2.
+curl -X POST "http://localhost:4568/profiles" \
+  -H "Content-Type: application/json" \
+  -d '{"id" : 4, "name" : "Paolo Naranjo","group" : "Group 3"}'
+
+3.
+curl -X PUT "http:localhost:4568/profiles?name=Emilio Aguinaldo" \
+  -H "Content-Type: application/json" \
+  -d '{"name" : "Antonio Luna", "group" : "Illustrados"}'
+4.
+curl -X DELETE "http:localhost:4568/profiles/2" 
+
+5. DELETE response:
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Jose Rizal",
+      "group": "Illustrados",
+      "apiCallsMade": null
+    },
+    {
+      "id": 3,
+      "name": "Antonio Luna",
+      "group": "Illustrados",
+      "apiCallsMade": null
+    },
+    {
+      "id": null,
+      "name": "Paolo Naranjo",
+      "group": "Group 3",
+      "apiCallsMade": [
+        "GET: /profiles",
+        "POST: /profiles",
+        "POST: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "PUT: /profiles",
+        "PUT: /profiles",
+        "PUT: /profiles",
+        "DELETE: /profiles"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Paolo Naranjo",
+      "group": "Group 3",
+      "apiCallsMade": [
+        "GET: /profiles",
+        "POST: /profiles",
+        "POST: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "DELETE: /profiles",
+        "PUT: /profiles",
+        "PUT: /profiles",
+        "PUT: /profiles",
+        "DELETE: /profiles"
+      ]
+    }
+  ],
+  "status": "Success"
+}
