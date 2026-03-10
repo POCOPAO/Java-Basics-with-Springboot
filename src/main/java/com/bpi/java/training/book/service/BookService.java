@@ -5,17 +5,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
-
+	@Autowired
 	private LoggerService loggerService;
 	
-	//Setter injection
-	@Autowired
-	public void setLoggerService(LoggerService loggerService) {
-		this.loggerService = loggerService;
-	}
 	
 	public void processBook() {
-		loggerService.log("Processing book using Setter Injection...");
+		loggerService.log("Processing book using Field Injection...");
 	}
 	
 }
