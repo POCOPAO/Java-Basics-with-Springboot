@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bpi.java.training.book.dto.BookDTO;
 import com.bpi.java.training.book.model.Book;
 
 @RestController
@@ -28,20 +29,24 @@ public class BookController {
 			new Book(2, "Noli Me Tangere", "Jose Rizal"), 
 			new Book(3, "Florante at Laura", "Francisco Balagtas")));
 	
+	private BookDTO convertToDTO(Book book) {
+		return new BookDTO(book.getId(), book.getTitle());
+	}
+	
 	//simple sequence generator for new IDs
 	private AtomicInteger idSequence = new AtomicInteger(3);
 	
 	// GET /api/books
 	@GetMapping
 	@ResponseBody
-	public List<Book> getAllBooks(){
-		return books;
+	public List<BookDTO> getAllBooks(){
+		return books.stream().map(this::convertToDTO).toList();
 	}
 	
 	// GET /api/books/{id}
 	@GetMapping("/{id}")
-	public Book getBookById(@PathVariable int id) {
-		return books.stream().filter(book -> book.getId()==id).findFirst().orElse(null);
+	public BookDTO getBookById(@PathVariable int id) {
+		return books.stream().filter(book -> book.getId()==id).findFirst().map(this::convertToDTO).orElse(null);
 	}
 	
 	//GET /api/books/search?id={id}
