@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bpi.java.training.book.model.Book;
@@ -38,6 +39,12 @@ public class BookController {
 	// GET /api/books/{id}
 	@GetMapping("/{id}")
 	public Book getBookById(@PathVariable int id) {
+		return books.stream().filter(book -> book.getId()==id).findFirst().orElse(null);
+	}
+	
+	//GET /api/books/search?id={id}
+	@GetMapping("/search")
+	public Book getBookByQuery(@RequestParam int id) {
 		return books.stream().filter(book -> book.getId()==id).findFirst().orElse(null);
 	}
 	
