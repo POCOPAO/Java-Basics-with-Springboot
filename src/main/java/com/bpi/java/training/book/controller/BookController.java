@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bpi.java.training.book.model.Book;
@@ -32,6 +33,7 @@ public class BookController {
 	
 	// GET /api/books
 	@GetMapping
+	@ResponseBody
 	public List<Book> getAllBooks(){
 		return books;
 	}
