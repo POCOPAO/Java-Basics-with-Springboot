@@ -1,19 +1,21 @@
 package com.bpi.java.training.book.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
 
-	private final LoggerService loggerService;
+	private LoggerService loggerService;
 	
-	//Constructor injection
-	public BookService(LoggerService loggerService) {
+	//Setter injection
+	@Autowired
+	public void setLoggerService(LoggerService loggerService) {
 		this.loggerService = loggerService;
 	}
 	
 	public void processBook() {
-		loggerService.log("Processing book...");
+		loggerService.log("Processing book using Setter Injection...");
 	}
 	
 }
