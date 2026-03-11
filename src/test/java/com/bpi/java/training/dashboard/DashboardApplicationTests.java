@@ -1,10 +1,10 @@
-package com.bpi.java.training.book;
+package com.bpi.java.training.dashboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookApplicationTests {
+class DashboardApplicationTests {
 
 	@Test
 	void contextLoads() {
