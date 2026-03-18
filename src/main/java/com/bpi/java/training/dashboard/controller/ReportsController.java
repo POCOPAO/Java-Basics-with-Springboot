@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DashboardController {
+public class ReportsController {
 	
-	@GetMapping("/dashboard")
-	public String dashboard() {
-		return "User dashboard!";
+	@GetMapping("/reports")
+	public String reports() {
+		return "Manager reports";
 	}
 }
