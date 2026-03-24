@@ -1,0 +1,246 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3618), pid=22732, tid=42344
+#
+# JRE version:  (17.0.14+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.14+7-adhoc..jdk17u, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58396 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Dashboard -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages com.bpi.java.training.dashboard.DashboardApplication
+
+Host: 12th Gen Intel(R) Core(TM) i5-1235U, 12 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7705)
+Time: Tue Mar 24 18:09:19 2026 Malay Peninsula Standard Time elapsed time: 2.067541 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000183af71e3d0):  JavaThread "Unknown thread" [_thread_in_vm, id=42344, stack(0x0000001ac0c00000,0x0000001ac0d00000)]
+
+Stack: [0x0000001ac0c00000,0x0000001ac0d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x681069]
+V  [jvm.dll+0x838cca]
+V  [jvm.dll+0x83a78e]
+V  [jvm.dll+0x83adf3]
+V  [jvm.dll+0x24826f]
+V  [jvm.dll+0x67dd99]
+V  [jvm.dll+0x67286a]
+V  [jvm.dll+0x30826b]
+V  [jvm.dll+0x30f756]
+V  [jvm.dll+0x35face]
+V  [jvm.dll+0x35fd0f]
+V  [jvm.dll+0x2df21c]
+V  [jvm.dll+0x2e0174]
+V  [jvm.dll+0x80a48b]
+V  [jvm.dll+0x36d841]
+V  [jvm.dll+0x7e8db5]
+V  [jvm.dll+0x3f154f]
+V  [jvm.dll+0x3f30c1]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c40c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffd17ba8f18, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000183c7641910 GCTaskThread "GC Thread#0" [stack: 0x0000001ac0d00000,0x0000001ac0e00000] [id=27008]
+  0x00000183c7651f60 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000001ac0e00000,0x0000001ac0f00000] [id=38756]
+  0x00000183c76539e0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000001ac0f00000,0x0000001ac1000000] [id=24040]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd1735f957]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000183b1350710] Heap_lock - owner thread: 0x00000183af71e3d0
+
+Heap address: 0x0000000705a00000, size: 4006 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000705a00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd1774a2b9]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.029 Loaded shared library C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6b2790000 - 0x00007ff6b279e000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\javaw.exe
+0x00007ffd89be0000 - 0x00007ffd89e48000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd89550000 - 0x00007ffd89619000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd87320000 - 0x00007ffd87711000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd865f0000 - 0x00007ffd8673b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd616e0000 - 0x00007ffd616fb000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\VCRUNTIME140.dll
+0x00007ffd616c0000 - 0x00007ffd616d7000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\jli.dll
+0x00007ffd889f0000 - 0x00007ffd88bb6000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd87720000 - 0x00007ffd87747000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd88c80000 - 0x00007ffd88cab000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd64200000 - 0x00007ffd64493000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7824_none_3e0870b2e3345462\COMCTL32.dll
+0x00007ffd864c0000 - 0x00007ffd865eb000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd878d0000 - 0x00007ffd87973000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd886a0000 - 0x00007ffd88749000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd88560000 - 0x00007ffd88591000 	C:\WINDOWS\System32\IMM32.DLL
+0x00000183b10c0000 - 0x00000183b10d6000 	C:\WINDOWS\System32\umppc20505.dll
+0x00000183b1100000 - 0x00000183b1114000 	C:\WINDOWS\System32\CsXumd64_20505.dll
+0x0000000052820000 - 0x0000000052891000 	C:\WINDOWS\System32\QIPCAP64.dll
+0x00007ffd88d90000 - 0x00007ffd894e2000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffd86880000 - 0x00007ffd869ea000 	C:\WINDOWS\System32\wintypes.dll
+0x00007ffd89810000 - 0x00007ffd89b96000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd88440000 - 0x00007ffd88558000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd885c0000 - 0x00007ffd88697000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffd89620000 - 0x00007ffd896d4000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd88ce0000 - 0x00007ffd88d86000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd848f0000 - 0x00007ffd84a1c000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ffd848b0000 - 0x00007ffd848e4000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ffd894f0000 - 0x00007ffd894fa000 	C:\WINDOWS\System32\NSI.dll
+0x00007ffd71510000 - 0x00007ffd7151c000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\vcruntime140_1.dll
+0x00007ffd5df20000 - 0x00007ffd5dfad000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\msvcp140.dll
+0x00007ffd17070000 - 0x00007ffd17cdc000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\server\jvm.dll
+0x00007ffd87ae0000 - 0x00007ffd87b54000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd86320000 - 0x00007ffd8637e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffd83a50000 - 0x00007ffd83a85000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd7e950000 - 0x00007ffd7e95b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd86300000 - 0x00007ffd86314000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffd850f0000 - 0x00007ffd8510b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd714c0000 - 0x00007ffd714ca000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\jimage.dll
+0x00007ffd84130000 - 0x00007ffd84372000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd71220000 - 0x00007ffd7125b000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd86740000 - 0x00007ffd867e5000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd61580000 - 0x00007ffd615a5000 	C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7824_none_3e0870b2e3345462;C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\openlogic-openjdk-17.0.14+7-windows-x64\openlogic-openjdk-17.0.14+7-windows-x64\bin\server
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58396 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Dashboard -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: com.bpi.java.training.dashboard.DashboardApplication
+java_class_path (initial): C:\Users\pdnaranjo\Documents\JAVA Springboot 101\Dashboard\target\classes;C:\Users\pdnaranjo\.m2\repository\org\springframework\boot\spring-boot-starter-security\4.0.3\spring-boot-starter-security-4.0.3.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\boot\spring-boot-starter\4.0.3\spring-boot-starter-4.0.3.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\boot\spring-boot-starter-logging\4.0.3\spring-boot-starter-logging-4.0.3.jar;C:\Users\pdnaranjo\.m2\repository\ch\qos\logback\logback-classic\1.5.32\logback-classic-1.5.32.jar;C:\Users\pdnaranjo\.m2\repository\ch\qos\logback\logback-core\1.5.32\logback-core-1.5.32.jar;C:\Users\pdnaranjo\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.25.3\log4j-to-slf4j-2.25.3.jar;C:\Users\pdnaranjo\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.3\log4j-api-2.25.3.jar;C:\Users\pdnaranjo\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\4.0.3\spring-boot-autoconfigure-4.0.3.jar;C:\Users\pdnaranjo\.m2\repository\jakarta\annotation\jakarta.annotation-api\3.0.0\jakarta.annotation-api-3.0.0.jar;C:\Users\pdnaranjo\.m2\repository\org\yaml\snakeyaml\2.5\snakeyaml-2.5.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\boot\spring-boot-security\4.0.3\spring-boot-security-4.0.3.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\boot\spring-boot\4.0.3\spring-boot-4.0.3.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\spring-context\7.0.5\spring-context-7.0.5.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\security\spring-security-config\7.0.3\spring-security-config-7.0.3.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\security\spring-security-core\7.0.3\spring-security-core-7.0.3.jar;C:\Users\pdnaranjo\.m2\repository\org\springframework\security\spring-security-crypto\7.0.3\spring-security-crypto-7.0.3.jar;C:\Users\pdnaranjo\.m2\reposit
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4200595456                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4200595456                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\jdk-21_windows-x64_bin\jdk-21.0.9
+PATH=C:/Users/pdnaranjo/OneDrive - bpi.com.ph/sts-4.31.0.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin/server;C:/Users/pdnaranjo/OneDrive - bpi.com.ph/sts-4.31.0.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\pdnaranjo\Documents\JAVA Springboot 101\apache maven\apache-maven-3.9.12\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\PortableGit\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\pdnaranjo\OneDrive - bpi.com.ph\Documents\Downloads\jdk-21_windows-x64_bin\jdk-21.0.9\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Users\pdnaranjo\AppData\Local\Microsoft\WindowsApps;C:\Users\pdnaranjo\AppData\Local\Programs\Microsoft VS Code\bin;;;C:\Users\pdnaranjo\OneDrive - bpi.com.ph\sts-4.31.0.RELEASE;
+USERNAME=pdnaranjo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 4, GenuineIntel
+TMP=C:\Users\pdnaranjo\AppData\Local\Temp
+TEMP=C:\Users\pdnaranjo\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.7705)
+OS uptime: 23 days 4:35 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 154 stepping 4 microcode 0x437, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv
+Processor Information for all 12 processors :
+  Max Mhz: 1300, Current Mhz: 1300, Mhz Limit: 1300
+
+Memory: 4k page, system-wide physical 16016M (793M free)
+TotalPageFile size 65168M (AvailPageFile size 19M)
+current process WorkingSet (physical memory assigned to process): 14M, peak: 14M
+current process commit charge ("private bytes"): 60M, peak: 312M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.14+7-adhoc..jdk17u) for windows-amd64 JRE (17.0.14+7-adhoc..jdk17u), built on Jan 22 2025 11:06:43 by "" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
