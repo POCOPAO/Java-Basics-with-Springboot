@@ -1,33 +1,29 @@
 package com.bpi.java.training.dashboard.model;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
+@Table(name = "users")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, length = 100)
+	@Column(nullable = false, name = "username")
 	private String username;
 	
-	@Column(nullable = false, length = 200)
+	@Column(nullable = false, name = "password")
 	private String password;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "enabled")
 	private boolean enabled = true;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name= "user_roles", joinColumns = @JoinColumn(name = "user_id"),
-	 inverseJoinColumns = @JoinColumn(name = "role_id"),
-	  uniqueConstraints = @UniqueConstraint(columnNames = {"user_id","role_id"}))
 
-	private Set<Role> roles = new HashSet<>();
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Set<Role> roles;
 	
 	public User() {}
 	
@@ -74,5 +70,6 @@ public class User {
 		this.roles = roles;
 	}
 
+	
 	
 }
