@@ -2,8 +2,8 @@ package com.example.userservice.service;
 
 import com.example.userservice.entity.Role;
 import com.example.userservice.entity.User;
-import com.example.userservice.exception.DuplicateUsernameException;
 import com.example.userservice.exception.ResourceNotFoundException;
+import com.example.userservice.exception.UsernameAlreadyExistException;
 import com.example.userservice.repository.RoleRepository;
 import com.example.userservice.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User createUser(String username, String password) {
         if (userRepository.existsByUsername(username)) {
-            throw new DuplicateUsernameException(username);
+            throw new UsernameAlreadyExistException(username);
         }
 
         User user = new User(username, password);

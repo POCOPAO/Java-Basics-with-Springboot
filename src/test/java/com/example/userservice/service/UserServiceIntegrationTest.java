@@ -2,8 +2,8 @@ package com.example.userservice.service;
 
 import com.example.userservice.entity.Role;
 import com.example.userservice.entity.User;
-import com.example.userservice.exception.DuplicateUsernameException;
 import com.example.userservice.exception.ResourceNotFoundException;
+import com.example.userservice.exception.UsernameAlreadyExistException;
 import com.example.userservice.repository.RoleRepository;
 import com.example.userservice.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,8 +59,8 @@ class UserServiceIntegrationTest {
         userService.createUser("john", "password123");
 
         // Act
-        DuplicateUsernameException exception = assertThrows(
-                DuplicateUsernameException.class,
+        UsernameAlreadyExistException exception = assertThrows(
+                UsernameAlreadyExistException.class,
                 () -> userService.createUser("john", "newPassword")
         );
 

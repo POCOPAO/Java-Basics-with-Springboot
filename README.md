@@ -1,88 +1,141 @@
 # UserService Testing Project
 
-A complete Spring Boot sample project for the exercises in your slides:
+This is a sample Spring Boot Maven project that covers all three exercises:
 
-- **Exercise 1:** Unit test `UserService`
-- **Exercise 2:** Integration test `UserService` using `@SpringBootTest`
+- **Exercise 1:** unit tests for `UserService`
+- **Exercise 2:** integration tests for `UserService` using `@SpringBootTest`
+- **Exercise 3:** web layer tests for `UserController` using `@WebMvcTest`
 
-## What is included
+## Stack
 
-- Spring Boot 3 project
+- Java 17
+- Spring Boot 3
+- Spring Web
+- Spring Data JPA
 - H2 in-memory database
-- `User` and `Role` JPA entities
-- `UserService` business logic
-- REST endpoints for quick manual testing
-- **Unit tests** with Mockito
-- **Integration tests** with `@SpringBootTest`
-- Database cleanup in `@BeforeEach`
-- AAA pattern in tests
+- JUnit 5
+- Mockito
+- MockMvc
 
-## Business scenarios covered
+## Features
 
-1. Create a user successfully
-2. Reject duplicate usernames
-3. Assign a role to a user successfully
-4. Fail when assigning a role to a missing user
-5. Fail when assigning a missing role
+- Create users
+- Prevent duplicate usernames
+- Create roles
+- Assign roles to users
+- Validation on request DTOs
+- Global exception handling
 
-## Package structure
+## Exercise Mapping
+
+### Exercise 1 - Unit Testing
+`src/test/java/com/example/userservice/service/UserServiceUnitTest.java`
+
+Covers:
+- successful user creation
+- duplicate username failure
+- successful role assignment
+- missing user failure
+- missing role failure
+
+### Exercise 2 - Integration Testing
+`src/test/java/com/example/userservice/service/UserServiceIntegrationTest.java`
+
+Uses:
+- `@SpringBootTest`
+- real repositories
+- H2 database
+- database cleanup in `@BeforeEach`
+
+### Exercise 3 - Web Layer Testing
+`src/test/java/com/example/userservice/controller/UserControllerTest.java`
+
+Uses:
+- `@WebMvcTest(UserController.class)`
+- mocked `UserService`
+- `MockMvc`
+- DTO validation with `@Valid`
+- global exception handler testing for `UsernameAlreadyExistException`
+
+Covers:
+- positive create user scenario
+- invalid request body / validation failure
+- duplicate username handled by controller advice
+
+## Project Structure
 
 ```text
-src
-├── main
-│   ├── java/com/example/userservice
-│   │   ├── controller
-│   │   ├── dto
-│   │   ├── entity
-│   │   ├── exception
-│   │   ├── repository
-│   │   └── service
-│   └── resources
-└── test
-    ├── java/com/example/userservice/service
-    └── resources
+src/main/java/com/example/userservice
+├── controller
+│   └── UserController.java
+├── dto
+│   ├── CreateRoleRequest.java
+│   └── CreateUserRequest.java
+├── entity
+│   ├── Role.java
+│   └── User.java
+├── exception
+│   ├── DuplicateUsernameException.java
+│   ├── GlobalExceptionHandler.java
+│   ├── ResourceNotFoundException.java
+│   └── UsernameAlreadyExistException.java
+├── repository
+│   ├── RoleRepository.java
+│   └── UserRepository.java
+└── service
+    ├── UserService.java
+    └── UserServiceImpl.java
 ```
 
-## Run the app
-
-```bash
-mvn spring-boot:run
-```
-
-## Run the tests
+## How to run tests
 
 ```bash
 mvn test
 ```
 
-## Sample API calls
-
-### Create a role
+## How to run the application
 
 ```bash
-curl -X POST http://localhost:8080/api/roles   -H "Content-Type: application/json"   -d '{"name":"ADMIN"}'
+mvn spring-boot:run
 ```
 
-### Create a user
+## API Endpoints
 
-```bash
-curl -X POST http://localhost:8080/api/users   -H "Content-Type: application/json"   -d '{"username":"john","password":"password123"}'
+### Create user
+`POST /api/users`
+
+Example request:
+
+```json
+{
+  "username": "john",
+  "password": "password123"
+}
 ```
 
-### Assign a role to a user
+### Create role
+`POST /api/roles`
 
-```bash
-curl -X POST http://localhost:8080/api/users/john/roles/ADMIN
+Example request:
+
+```json
+{
+  "name": "ADMIN"
+}
 ```
 
-### Get a user
+### Assign role to user
+`POST /api/users/{username}/roles/{roleName}`
 
-```bash
-curl http://localhost:8080/api/users/john
-```
+Example:
+
+`POST /api/users/john/roles/ADMIN`
+
+### Get user by username
+`GET /api/users/{username}`
 
 ## Notes
 
-- This project uses **H2** so it works without installing a database.
-- Integration tests use `application-test.properties`.
-- The database is cleaned before each integration test with `@BeforeEach`.
+- `password` is write-only in API responses
+- the project is designed for teaching unit, integration, and web layer testing
+- the tests follow the AAA pattern where appropriate

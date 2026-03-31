@@ -1,7 +1,8 @@
 package com.example.userservice.exception;
 
-public class DuplicateUsernameException extends RuntimeException {
+@Deprecated
+public class DuplicateUsernameException extends UsernameAlreadyExistException {
     public DuplicateUsernameException(String username) {
-        super("Username already exists: " + username);
+        super(username);
     }
 }

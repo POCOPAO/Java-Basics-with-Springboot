@@ -5,6 +5,7 @@ import com.example.userservice.dto.CreateUserRequest;
 import com.example.userservice.entity.Role;
 import com.example.userservice.entity.User;
 import com.example.userservice.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,13 +21,13 @@ public class UserController {
 
     @PostMapping("/users")
     @ResponseStatus(HttpStatus.CREATED)
-    public User createUser(@RequestBody CreateUserRequest request) {
+    public User createUser(@Valid @RequestBody CreateUserRequest request) {
         return userService.createUser(request.getUsername(), request.getPassword());
     }
 
     @PostMapping("/roles")
     @ResponseStatus(HttpStatus.CREATED)
-    public Role createRole(@RequestBody CreateRoleRequest request) {
+    public Role createRole(@Valid @RequestBody CreateRoleRequest request) {
         return userService.createRole(request.getName());
     }
 
